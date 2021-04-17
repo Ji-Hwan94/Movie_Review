@@ -8,12 +8,17 @@
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <style>
+        .ui-bar-a, .ui-page-theme-a .ui-bar-inherit, html .ui-bar-a .ui-bar-inherit, html .ui-body-a .ui-bar-inherit, html body .ui-group-theme-a .ui-bar-inherit {
+            background-color: wheat;
+        }
+    </style>
 </head>
 <body>
     <div data-role="page" id="page1">
         <!-- header -------------------------------------------------------------->
         <div data-role="header">
-            <h3>영화관위치</h3>
+            <h3>영화관 위치</h3>
             <a href="index.html" rel="external" data-icon="home" data-iconpos="notext">Home</a>
             <a href="index.html" rel="external" data-icon="back" data-iconpos="notext">Prev</a>
         </div>
@@ -21,10 +26,12 @@
         <!-- content ------------------------------------------------------------->
         <div data-role="ui-content">
             <!-- 카카오맵 ----------------------------------------------->
-            <div id="kakaomap" style="width: 100%;height: 500px;"></div>
-            <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=319fd94a19e021ebbfeae084afeaebda"></script>
-            <script> 
-                $(window).load(function() {
+        <div id="kakaomap" style="width: 100%;height: 500px;"></div>
+        <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=4b6809baf53cb356731df0dd484fec5f"></script>
+
+        <script> 
+        // 윈도우가 실행 될때 function을 실행 한다.
+        $(window).load(function() {
                     var mapContainer = document.getElementById('kakaomap'), // 지도를 표시할 div 
                     mapOption = { 
                             center: new daum.maps.LatLng(37.501584214549496, 127.0263189981199), // 지도의 중심좌표
@@ -44,10 +51,10 @@
                     // 마커가 지도 위에 표시되도록 설정합니다
                     marker.setMap(map);
                 });
-                
 
-            </script>
-            <!-- 카카오맵.끝.-->
+        </script>
+        <!-- 카카오맵.끝.-->
+            
         </div>
         <!-- content -->
         <!-- footer ------------------------------------------------------------------>
